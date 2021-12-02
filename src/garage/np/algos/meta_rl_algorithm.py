@@ -20,6 +20,9 @@ class MetaRLAlgorithm(RLAlgorithm, abc.ABC):
 
         """
 
+    def get_exploration_policy(self, env_up=None):
+        return self.get_exploration_policy()
+
     @abc.abstractmethod
     def adapt_policy(self, exploration_policy, exploration_episodes):
         """Produce a policy adapted for a task.

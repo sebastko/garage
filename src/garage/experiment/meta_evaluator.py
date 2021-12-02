@@ -86,10 +86,10 @@ class MetaEvaluator:
                               n_workers=1,
                               worker_class=self._worker_class,
                               worker_args=self._worker_args),
-                agents=algo.get_exploration_policy(),
+                agents=algo.get_exploration_policy(env_updates[0]),
                 envs=env)
         for env_up in env_updates:
-            policy = algo.get_exploration_policy()
+            policy = algo.get_exploration_policy(env_up)
             eps = EpisodeBatch.concatenate(*[
                 self._test_sampler.obtain_samples(self._eval_itr, 1, policy,
                                                   env_up)
