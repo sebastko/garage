@@ -461,12 +461,16 @@ def dump_json(filename, data):
         # We do our own circular reference handling.
         # Sometimes sort_keys fails because the keys don't get made into
         # strings early enough.
+
+        # Remove temporarily because it takes too long.
+        """
         json.dump(data,
                   f,
                   indent=2,
                   sort_keys=False,
                   cls=LogEncoder,
-                  check_circular=False)
+                  check_circular=True)
+        """
 
 
 def get_metadata():

@@ -95,6 +95,10 @@ class MetaEvaluator:
                                                   env_up)
                 for _ in range(self._n_exploration_eps)
             ])
+            #
+            # Looks like easier way?...
+            #eps = self._test_sampler.obtain_samples(self._eval_itr, self._n_exploration_eps, policy,
+            #                                      env_up)
             adapted_policy = algo.adapt_policy(policy, eps)
             adapted_eps = self._test_sampler.obtain_samples(
                 self._eval_itr,

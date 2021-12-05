@@ -441,7 +441,8 @@ class Trainer:
                 self._stats.total_epoch = epoch
                 self._stats.total_itr = self.step_itr
 
-                self.save(epoch)
+                # Doesn't seem to work...
+                #self.save(epoch)
 
                 if self.enable_logging:
                     self.log_diagnostics(self._train_args.pause_for_plot)
