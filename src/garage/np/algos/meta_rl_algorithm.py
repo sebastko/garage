@@ -20,7 +20,7 @@ class MetaRLAlgorithm(RLAlgorithm, abc.ABC):
 
         """
 
-    def get_exploration_policy(self, env_up=None):
+    def get_exploration_policy_for_task(self, env_up=None):
         return self.get_exploration_policy()
 
     @abc.abstractmethod
